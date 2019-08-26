@@ -2,6 +2,7 @@
 export const mixinsTest = {
     methods:{
         hello(){
+        	console.log(this.$route.query,"query")
             console.log("hello");
             
         },

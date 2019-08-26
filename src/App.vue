@@ -3,7 +3,12 @@
     <!--<div id="nav">-->
       <!--<router-link to="/">Home</router-link> |-->
       <!--<router-link to="/about">About</router-link>-->
-      <router-view/>
+      <!--<router-view/>-->
+      <keep-alive>      
+			    <router-view v-if="$route.meta.keepAlive"/>    
+			</keep-alive>    
+			<router-view v-if="!$route.meta.keepAlive"/>
+
     <!--</div>-->
     
   </div>
@@ -22,6 +27,7 @@
   left: 0;
   right: 0;
   margin: auto;
+  height: 100%;
 }
 html,body{
 	margin: auto;
@@ -30,6 +36,7 @@ html,body{
   bottom: 0;
   left: 0;
   right: 0;
+  height: 100%;
 }
 #nav {
   /*padding: 30px;*/

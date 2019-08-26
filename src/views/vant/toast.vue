@@ -3,12 +3,15 @@
 		<div class="title">
 			{{title}}
 		</div>
+		<div class="" v-if="aaa">
+			hahah
+		</div>
 		<div class="container">
 			<div>基础用法</div>
 			<!--<van-button @click="toastF">轻提示</van-button>-->
 			<button @click="toastF">123</button>
 		</div>
-		<van-action-sheet v-model="show" :actions="actions" :overlay="overlay" :title="title"></van-action-sheet>
+		<van-action-sheet v-model="show" :actions="actions" :overlay="overlay" :title="title" :round="round"  cancel-text="取消"></van-action-sheet>
 		<!--<van-tabs v-model="activeName">
 		  <van-tab title="标签 1" name="a">内容 1</van-tab>
 		  <van-tab title="标签 2" name="b">内容 2</van-tab>
@@ -28,13 +31,16 @@ import {mixinsTest} from "./mixins.js"
 				title:"toast 轻提示",
 				show:false,
 				actions:[
-					{name:"123"},
-					{name:"234"}
+					{name:"123",loading:true},
+					{name:"234",disabled:true}
 				],
 				activeName:2,
 				overlay:true,
 				 message: 'goodbye',
-      			bar: 'def'
+      			bar: 'def',
+      			round:true,
+      			aaa:true
+      			
 			}
 		},
 		mixins:[mixinsTest],
@@ -54,6 +60,7 @@ import {mixinsTest} from "./mixins.js"
 			}
 		},
 		mounted(){
+			window.vm=this;
 			console.log(Tab);
 			console.log(this.$data);
 			this.world()

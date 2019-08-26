@@ -7,6 +7,18 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
+  scrollBehavior (to, from, savedPosition) {
+  	console.log(to, from, savedPosition)
+    if (savedPosition) {  
+          return savedPosition    
+    } else {      
+          if (from.meta.keepAlive) {     
+          	console.log(from,"from")
+               from.meta.savedPosition = document.body.scrollTop;      
+          }        
+          return { x: 0, y: to.meta.savedPosition || 0 }    
+    }  
+},
   routes: [
     {
       path: '/',
@@ -45,6 +57,36 @@ export default new Router({
       path: '/directive',
       name: 'directive',
       component: ()=>import('./views/vant/vue/directive.vue')
+    },
+    {
+      path: '/render',
+      name: 'render',
+      component: ()=>import('./views/vant/vue/render.vue')
+    },
+    {
+      path: '/computed',
+      name: 'computed',
+      component: ()=>import('./views/vant/vue/computed.vue')
+    },
+    {
+      path: '/compModel',
+      name: 'compModel',
+      component: ()=>import('./views/vant/vue/demo.vue')
+    },
+    {
+      path: '/list',
+      name: 'list',
+      component: ()=>import('./views/vant/vue/list.vue'),
+      meta:{
+      	 isUseCache: false,  // 这个字段的意思稍后再说      
+        keepAlive: true  // 通过此字段判断是否需要缓存当前组件  
+      }
+    },
+     {
+      path: '/detail',
+      name: 'detail',
+      component: ()=>import('./views/vant/vue/detail.vue'),
+      
     },
   ]
 })
