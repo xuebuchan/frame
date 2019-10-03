@@ -1,6 +1,6 @@
 <template>
 	<div class="">
-		<input type="" name="" id="" value="hahah" v-focuss/>
+		<input type="" name="" id="" value="hahah" v-focuss/>gh
 		<input type="text" value="聚焦" v-focus/>
 	</div>
 </template>

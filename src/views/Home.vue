@@ -1,18 +1,66 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- <img alt="Vue logo" src="../assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+		<!-- <van-tabs v-model="active" @click="tab"> -->
+  <!-- <van-tab :title="item.name" :to="'/home/'+item.name" v-for="item in data" > -->
+		<!-- <router-view></router-view> -->
+		<!-- {{item.name}} -->
+	<!-- </van-tab> -->
+<!-- </van-tabs> -->
+<div  class="tab">
+	<router-link v-for="item in data" :to="'/home/'+item.name" tag="label">{{item.name}}</router-link>
+</div>
+<keep-alive>
+	<router-view></router-view>
+</keep-alive>
+
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
-
+import {Tab,Tabs} from "vant"
 export default {
   name: 'home',
   components: {
-    HelloWorld
-  }
+    HelloWorld,
+		[Tab.name]:Tab,
+		[Tabs.name]:Tabs
+  },
+	data(){
+		return {
+			active:0,
+			name:"vue",
+			data:[
+				{name:'vue'},{name:'vant'},{name:"ecma"},{name:"else"},{name:"html"}
+			]
+		}
+	},
+	methods:{
+		tab(name,title){
+			console.log(name,title);
+			this.name=title
+			console.log(this)
+			
+		}
+	}
+	
 }
 </script>
+<style lang="less">
+	.tab{
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: nowrap;
+		height: 40px;
+		label{
+			text-align: center;
+			line-height: 40px
+		}
+		.router-link-active{
+			color: red
+		}
+	}
+</style>

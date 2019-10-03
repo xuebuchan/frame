@@ -23,7 +23,7 @@
 <script>
 	import {Button ,Toast,ActionSheet,Tab,Dialog} from "vant"
 //import * as vant from "vant" 
-import {mixinsTest} from "./mixins.js"
+import {mixinsTest} from "../js/mixins.js"
 	export default{ 
 		name:"toast1",
 		data(){

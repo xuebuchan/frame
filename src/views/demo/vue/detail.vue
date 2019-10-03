@@ -14,7 +14,7 @@
 
 <script>
 	import {Cell,CellGroup} from "vant"
-	import {mixinsTest} from "../mixins.js"
+	import {mixinsTest} from "../js/mixins.js"
 	export default{
 		name:"cell",
 		data(){

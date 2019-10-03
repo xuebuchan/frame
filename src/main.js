@@ -5,7 +5,9 @@ import router from './router'
 import store from './store'
 import "lib-flexible"
 import './assets/css/reset.css'
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+import axios from 'axios'
+Vue.prototype.$axios = axios  
 Vue.mixin({
   created: function () {
 //  console.log(333)

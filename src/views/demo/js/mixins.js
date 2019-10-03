@@ -18,6 +18,7 @@ export const mixinsTest = {
     	}  	
     },
     created(){
+		console.log('mixin')
         this.hello()
     }
 }
