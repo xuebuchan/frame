@@ -31,7 +31,9 @@
 					{name:"directive"},
 					{name:"list",des:"返回列表回到原位置"},
 					{name:"component",des:"动态组件的用法"},
-					{name:"store",des:"vue用法"}
+					{name:"store",des:"vue用法"},
+					{name:"imgFit",des:"图片自适应宽高"},
+					{name:"uploadFile",des:"文件上传"}
 					// {name:"detail"},
 				]
 			}

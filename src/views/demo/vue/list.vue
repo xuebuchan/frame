@@ -4,6 +4,7 @@
 	<router-link v-for="item in list" :key="item" :to='{path:"detail",query:{"id":item}}'>
 		<van-cell :title="item"/>
 	</router-link>
+	<button>anniu</button>
 </div>
 
   
@@ -63,4 +64,13 @@
 </script>
 
 <style>
+.scroll{
+	background:red
+}
+button{
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+}
+
 </style>

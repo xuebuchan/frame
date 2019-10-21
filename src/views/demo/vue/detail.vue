@@ -15,6 +15,7 @@
 <script>
 	import {Cell,CellGroup} from "vant"
 	import {mixinsTest} from "../js/mixins.js"
+	import tool from "@/assets/tool"
 	export default{
 		name:"cell",
 		data(){
@@ -38,7 +39,10 @@
 		mounted(){
 			this.value=this.$route.query;
 			console.log(this.$route.query);
-			console.log(this)
+			console.log(this);
+			console.log(tool.getUrlParams("id"),'id');
+			console.log(tool)
+			console.log(tool.BrowserInfo.isIphone,"isali")
 		}
 	}
 </script>

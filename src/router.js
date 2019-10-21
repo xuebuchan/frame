@@ -29,6 +29,7 @@ export default new Router({
 		  path: '/home',
 		  name: 'home',
 		 component: () => import(/* webpackChunkName: "about" */ './views/Home.vue'),
+		 //父子嵌套路由
 		 children:[
 			 {
 			 				 path:'vant',
@@ -84,6 +85,11 @@ export default new Router({
 			   path: 'interface',
 			   name: 'interface',
 			   component: ()=>import('./views/demo/es6/interface.vue')
+			 },
+			 {
+			   path: 'date',
+			   name: 'date',
+			   component: ()=>import('./views/demo/es6/date.vue')
 			 },
 		 ]
 		},
@@ -195,6 +201,17 @@ export default new Router({
 		  path: '/kuayu',
 		  name: 'kuayu',
 		  component: ()=>import('./views/demo/kuayu.vue'),
+		  
+		},
+// 		{
+// 		  path: '/:id',
+// 		  component: ()=>import('./views/demo/id.vue'),
+// 		  
+// 		},
+		{
+		  path: '/uploadFile',
+		  // name: 'kuayu',
+		  component: ()=>import('./views/demo/vue/uploadFile.vue'),
 		  
 		},
   ]

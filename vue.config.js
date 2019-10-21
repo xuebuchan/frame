@@ -8,7 +8,13 @@ module.exports = {
 				jQuery:"jquery",
 				"windows.jQuery":"jquery"
 			})
-		]
+		],
+// 		 externals:{
+//             'vue': 'Vue',
+//             'vue-router': 'VueRouter',
+//             'vuex': 'Vuex',
+//             'axios': 'axios',
+//           }
 	},
 	 devServer: {
         proxy: {
@@ -20,6 +26,11 @@ module.exports = {
             }
 
         }
-    }
+    },
+	chainWebpack: config => {//①这里是配置的部分
+      config
+        .plugin('webpack-bundle-analyzer')
+        .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
+    },
 
 }

@@ -18,15 +18,18 @@
 		},
 		methods:{
 			submit(){
-				this.$axios({
-					url:api.addPerson,
-					method:"post",
-					data:{
-					name:this.name,
-					age:this.age
-					}
-				}).then((res)=>{
-					console.log(res)
+// 				this.$axios({
+// 					url:api.addPerson,
+// 					method:"post",
+// 					data:{
+// 					name:this.name,
+// 					age:this.age
+// 					}
+// 				}).then((res)=>{
+// 					console.log(res)
+// 				})
+				this.$getInterfaceData(api.addPerson,"post",{name:this.name,age:this.age}).then((res)=>{
+					console.log(1)
 				})
 				
 			}

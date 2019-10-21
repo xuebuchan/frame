@@ -14,7 +14,8 @@
 		data(){
 			return {
 				data:[
-					{name:'interface',}
+					{name:'interface',},
+					{name:"date"}
 				]
 			}
 		}

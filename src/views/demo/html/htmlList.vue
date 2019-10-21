@@ -11,7 +11,8 @@
 			return{
 				data:[
 					{name:"dom"},
-					{name:"cssInherited"}
+					{name:"cssInherited"},
+					{name:'imgFit'}
 				]
 			}
 		}
