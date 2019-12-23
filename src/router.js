@@ -5,17 +5,17 @@ import Home from './views/Home.vue'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history',
   base: process.env.BASE_URL,
   scrollBehavior (to, from, savedPosition) {
-  	console.log(to, from, savedPosition)
+  	// console.log(to, from, savedPosition)
     if (savedPosition) {  
           return savedPosition    
     } else {      
-          if (from.meta.keepAlive) {     
-          	console.log(from,"from")
-               from.meta.savedPosition = document.body.scrollTop;      
-          }        
+//           if (from.meta.keepAlive) {     
+//           	console.log(from,"from")
+//                from.meta.savedPosition = document.body.scrollTop;      
+//           }        
           return { x: 0, y: to.meta.savedPosition || 0 }    
     }  
 },
@@ -35,16 +35,23 @@ export default new Router({
 			 				 path:'vant',
 			 				 name:"vantList",
 			 				 component:()=>import('./views/demo/vant/vantList.vue'),
+							  
 			 },
 			 {
 				 path:'/',
 				 name:"vueList",
 				 component:()=>import('./views/demo/vue/vueList.vue'),
+				 
 			 },
 			 {
 			 				 path:'vue',
 			 				 name:"vueList",
 			 				 component:()=>import('./views/demo/vue/vueList.vue'),
+							 beforeEnter: (to, from, next) => {
+							 	console.log("beforeEnter");
+							 	console.log(to,from,next);
+							 	next()
+							 }
 			 },
 			 {
 			 				 path:'ecma',
@@ -76,6 +83,11 @@ export default new Router({
 			   name: 'dom',
 			   component: ()=>import('./views/demo/html/dom.vue')
 			 },
+			  {
+			   path: 'cssanimation',
+			   name: 'cssanimation',
+			   component: ()=>import('./views/demo/html/cssanimation.vue')
+			 },
 			 {
 			   path: 'cssInherited',
 			   name: 'cssInherited',
@@ -106,6 +118,11 @@ export default new Router({
       name: 'loading',
       component: ()=>import('./views/demo/vant/loading.vue')
     },
+		{
+		  path: '/picker',
+		  name: 'picker',
+		  component: ()=>import('./views/demo/vant/picker.vue')
+		},
     {
       path: '/toast',
       name: 'toast',
@@ -167,6 +184,12 @@ export default new Router({
       component: ()=>import('./views/demo/vue/detail.vue'),
       
     },
+		 {
+		  path: '/route',
+		  name: 'route',
+		  component: ()=>import('./views/demo/vue/route.vue'),
+		  
+		},
 		{
 		  path: '/slot',
 		  name: 'slot',
@@ -216,3 +239,5 @@ export default new Router({
 		},
   ]
 })
+
+

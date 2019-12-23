@@ -9,6 +9,7 @@
 		<div class="bottom">
 			<button>按钮</button>
 		</div>
+		<div class="thinner-border">555</div>
 	</div>
 </template>
 
@@ -76,5 +77,21 @@ textarea{
 button{
 	position: fixed;
 	bottom: 0
+}
+.thinner-border {
+    position: relative;
+    width: 1px;
+    margin:14px 0;
+    height: 20px;
+}
+.thinner-border:after {
+    content: '';
+    position: absolute;
+    width: 500%;
+    height: 500%;
+    border: 1px solid #ffd000;
+    transform-origin: 0 0;
+    transform: scale(0.2, 0.2);
+    box-sizing: border-box;
 }
 </style>

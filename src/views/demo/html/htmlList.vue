@@ -12,7 +12,8 @@
 				data:[
 					{name:"dom"},
 					{name:"cssInherited"},
-					{name:'imgFit'}
+					{name:'imgFit'},
+					{name:"cssanimation"}
 				]
 			}
 		}

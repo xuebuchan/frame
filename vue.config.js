@@ -1,13 +1,15 @@
 const webpack = require('webpack')
 module.exports = {
+	// baseUrl:'/frame/dist/',
+	baseUrl:'./',
 	configureWebpack: {
 		plugins: [
-			new webpack.ProvidePlugin({
-				$:"jquery",
-	 
-				jQuery:"jquery",
-				"windows.jQuery":"jquery"
-			})
+// 			new webpack.ProvidePlugin({
+// 				$:"jquery",
+// 	 
+// 				jQuery:"jquery",
+// 				"windows.jQuery":"jquery"
+// 			})
 		],
 // 		 externals:{
 //             'vue': 'Vue',

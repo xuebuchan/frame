@@ -15,7 +15,8 @@
 			return {
 				data:[
 					{name:"toast",},
-					{name:'loading'}
+					{name:'loading'},
+					{name:"picker"}
 				]
 			}
 		}

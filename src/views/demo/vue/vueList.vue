@@ -33,10 +33,19 @@
 					{name:"component",des:"动态组件的用法"},
 					{name:"store",des:"vue用法"},
 					{name:"imgFit",des:"图片自适应宽高"},
-					{name:"uploadFile",des:"文件上传"}
+					{name:"uploadFile",des:"文件上传"},
+					{name:"route",des:"周期函数"}
 					// {name:"detail"},
 				]
 			}
+		},
+		beforeRouteEnter(to,from,next){
+			console.log("beforeRouterEnter");
+			console.log(to,from,next);
+			next(vm=>{
+				console.log(vm.data)
+			})
+			
 		}
 	}
 </script>

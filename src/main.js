@@ -10,6 +10,15 @@ Vue.config.productionTip = false;
 // Vue.prototype.$axios = axios  
 import getInterfaceData from './assets/http.js'
 Vue.use(getInterfaceData)
+router.beforeEach((to, from, next) => {
+	console.log("全局前置守卫");
+	next()
+  // ...
+})
+router.afterEach((to, from) => {
+	console.log("全局后置守卫")
+  // ...
+})
 Vue.mixin({
   created: function () {
 //  console.log(333)
@@ -76,6 +85,17 @@ Vue.component('anchored-heading', {
       required: true
     }
   }
+})
+//守卫
+router.beforeEach((to, from, next) => {
+	console.log("before")
+  // console.log(to,from,next)
+	next()
+})
+router.afterEach((to, from) => {
+  console.log("after")
+	// console.log(to,from);
+	// next()
 })
 new Vue({
   router,
