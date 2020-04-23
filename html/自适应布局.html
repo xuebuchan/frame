@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--一列定宽一列自适应布局-->
+		<div id="container1">
+			<div class="right">
+				456
+			</div>
+		<div class="left">
+			123
+		</div>	
+		
+		</div>
+		<hr />
+		<hr />
+		<!--两列定宽，一列自适应布局-->
+		<div id="container2">
+			<div class="right">
+				456
+			</div>
+		<div class="left">
+			123
+		</div>	
+		<div class="middle">
+			中中中
+		</div>
+		
+		</div>
+		<!--两列定宽，一列自适应布局-->
+		<div id="container3">
+			<div class="left">left</div>
+			<div class="center">center</div>
+			<div class="right"><p>right</p><p>right</p></div>
+		</div>
+		<!--不定宽加自适应布局-->
+		<div id="container4">
+			<div class="left"><p>left</p></div>
+			<div class="right">
+			<p>right</p>
+			<p>right</p>
+			</div>
+
+		</div>
+		<div id="container5">
+			<div class="left">
+				第三方
+			</div>
+			<div class="right">
+				电话费
+			</div>
+		</div>
+		
+
+	</body>
+	<style type="text/css">
+		#container1 .left{
+			height: 50px;
+			margin-right: 100px;
+			background: red;
+			
+		}
+		#container1 .right{
+			float: right;
+			height: 60px;
+			background: blue;
+			width: 100px;
+		}
+		#container2 .left{
+			float: left;
+			height: 50px;
+			background: black;
+			width: 200px;
+		}
+		#container2 .right{
+			float: right;
+			height: 50px;
+			background: gray;
+			width: 100px;
+		}
+		#container2 .middle{
+			background: pink;
+			height: 100px;
+			margin-left: 200px;
+			margin-right: 100px;
+		}
+		#container3 .left{
+		    background-color:red;
+		    }
+		#container3 .center{
+		    background-color:yellow;
+		    }
+		#container3 .left,#container3 .center{
+		    width:100px;
+		    float:left;
+		    margin-right:20px;
+		    }
+		 
+		#container3 .right{
+		    overflow:hidden;
+		    background-color:blue;
+		    }
+		    
+#container4 .left{
+    background-color:red;
+    float:left;
+    margin-right:20px;
+    }
+#container4 .right{
+    background-color:blue;
+    overflow:hidden;
+    }
+#container4 .left p{
+    width:200px;
+    }
+    #container5 {
+    	display: flex;
+    	justify-content: flex-start;
+    }
+    #container5 .left{
+   width: 100px;
+   background: orange;
+   margin-left: 50px;
+    }
+    #container5 .right{
+    	flex: 1;
+    }
+    
+
+
+	</style>
+</html>

@@ -2,6 +2,8 @@
 	<div id="example">
   <p>Original message: "{{ message }}"</p>
   <p>Computed reversed message: "{{ reversedMessage }}"</p>
+  <p>{{haha}}</p>
+  <input type="" name="" id=""v-model="obj.a" />
 </div>
 </template>
 	
@@ -9,7 +11,15 @@
 	export default{
 		data(){
 			return{
-				message: 'Hello'
+				message: 'Hello',
+				obj:{
+					a:1,
+					b:2,
+					c:{
+						name:"xuwh",
+						className:[1,2,3]
+					}
+				}
 			}
 	    
 	  },
@@ -18,12 +28,38 @@
 	    reversedMessage: function () {
 	      // `this` 指向 vm 实例
 	      return this.message.split('').reverse().join('')
+	    },
+	    haha:(vm)=>{
+	    	console.log(this);
+	    	console.log(vm);
+	    	return vm.message+"1234"
 	    }
+	  },
+	  watch:{
+	  	message(newVal,oldVal){
+	  		console.log(newVal,oldVal);
+	  	},
+	  	'obj.a':function(){
+	  		console.log(this.obj)
+	  	},
+	  	obj:{
+	  		handler:function(){
+	  			console.log(this.obj,123)
+	  		},
+	  		deep:true
+	  	}
+	  },
+	  methods:{
+	  	print(){
+	  		console.log(this.obj)
+	  	},
 	  },
 		beforeCreate(){
 			console.log("2beforeCreate")
 		},
 		created(){
+			window.abc=this;
+			
 			console.log("2created")
 		},
 		beforeMount(){
@@ -32,12 +68,12 @@
 		mounted(){
 			console.log("2mounted")
 		},
-		beforeUpdate(){
-			console.log("2beforeUpdated")
-		},
-		updated(){
-			console.log("2updated")
-		},
+//		beforeUpdate(){
+//			console.log("2beforeUpdated")
+//		},
+//		updated(){
+//			console.log("2updated")
+//		},
 		beforeDestroy(){
 			console.log("2beforeDestroy")
 		},

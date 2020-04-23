@@ -1,5 +1,5 @@
 <template>
-	<div class="comp" v-model="value">
+	<div class="comp" v-show="value">
 		123
 		<button @click="close">点击</button>
 		<button @click="close1">点击2</button>

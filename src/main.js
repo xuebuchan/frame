@@ -7,9 +7,25 @@ import "lib-flexible"
 import './assets/css/reset.css'
 Vue.config.productionTip = false;
 // import axios from 'axios'
-// Vue.prototype.$axios = axios  
+// Vue.prototype.$axios = axios
 import getInterfaceData from './assets/http.js'
 Vue.use(getInterfaceData)
+import VueI18n from 'vue-i18n'
+
+Vue.use(VueI18n) // 通过插件的形式挂载
+import zh from'./lang/zh'
+import en from'./lang/en'
+const i18n = new VueI18n({
+    locale: 'en-US',    // 语言标识
+    //this.$i18n.locale // 通过切换locale的值来实现语言切换
+    messages: {
+        'zh-CN': zh,   // 中文语言包
+        'en-US': en    // 英文语言包
+    }
+})
+
+
+// Vue.use(VueI18n)
 router.beforeEach((to, from, next) => {
 	console.log("全局前置守卫");
 	next()
@@ -100,5 +116,7 @@ router.afterEach((to, from) => {
 new Vue({
   router,
   store,
+    i18n,
   render: h => h(App)
 }).$mount('#app')
+console.log(i18n,"vue")

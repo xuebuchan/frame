@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>媒体查询</title>
+		<style>
+			@media screen and (min-width:600px) and (max-width:900px){
+				  body {background-color:red;}
+				}
+		</style>
+	</head>
+	<body>
+		<div id="">
+			123
+		</div>
+		<p>居中</p>
+		<div class="father">
+			<div class="son">
+				123
+			</div>
+		</div>
+		<div class="container">
+			<span>123打客服</span>
+			<img src="../dist/favicon.ico"/>
+		</div>
+		<div id="" style="visibility: hidden;">
+			123
+			<div id="" style="visibility: visible;">
+				456
+			</div>
+		</div>
+	</body>
+	<style>
+		/*定位加transform*/
+		/*.father{
+			width: 500px;
+			height: 400px;
+			background: blue;
+			border: 1px solid pink;
+			position: relative;
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+		}*/
+		/*定位加margin*/
+		.father{
+			width: 500px;
+			height: 400px;
+			background: blue;
+			border: 1px solid pink;
+			display: table;
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			background: red;
+			display: table-cell;
+			vertical-align: middle;
+		}
+		
+	</style>
+</html>

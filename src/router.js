@@ -103,6 +103,11 @@ export default new Router({
 			   name: 'date',
 			   component: ()=>import('./views/demo/es6/date.vue')
 			 },
+			  {
+			   path: 'customEvent',
+			   name: 'customEvent',
+			   component: ()=>import('./views/demo/es6/customEvent.vue')
+			 },
 		 ]
 		},
     {
@@ -159,6 +164,11 @@ export default new Router({
       name: 'computed',
       component: ()=>import('./views/demo/vue/computed.vue')
     },
+// 		{
+// 		  path: '/drag',
+// 		  name: 'drag',
+// 		  component: ()=>import('./views/demo/vue/drag.vue')
+// 		},
 		 {
 		  path: '/component',
 		  name: 'component',

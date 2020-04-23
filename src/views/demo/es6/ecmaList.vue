@@ -15,7 +15,8 @@
 			return {
 				data:[
 					{name:'interface',},
-					{name:"date"}
+					{name:"date"},
+					{name:"customEvent"}
 				]
 			}
 		}

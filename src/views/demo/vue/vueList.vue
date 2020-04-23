@@ -34,7 +34,8 @@
 					{name:"store",des:"vue用法"},
 					{name:"imgFit",des:"图片自适应宽高"},
 					{name:"uploadFile",des:"文件上传"},
-					{name:"route",des:"周期函数"}
+					{name:"route",des:"周期函数"},
+					{name:"drag"}
 					// {name:"detail"},
 				]
 			}

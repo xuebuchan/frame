@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+		function handle (){
+			var value=document.getElementsByClassName('abc')[0].value;
+			console.log(value);
+			document.getElementsByTagName('p')[0].innerHTML=value;
+		}
+	</script>
+	</head>
+	<body>
+		<input type="text"  class="abc" oninput="handle()" />
+		<p>123</p>
+		<div class="container">
+			<div class="son">
+				大家风刀霜剑弗兰克
+			</div>
+		</div>
+		 <div id="container" class="placeholder"></div>
+		 <div class="img">
+		 	<img src="../dist/demo2.jpeg"/>
+		 </div>
+		 <div class='embox'>
+
+    <span class="em">用em相对长度单位来设置文本的字体大小</span>
+
+</div>
+	</body>
+	<style>
+		.son {
+		  border: 1px solid red;
+		  background: green;
+		  width: 50%; /*父元素宽度一半*/
+		  padding-top: calc(100% - 2px); /*与width一样，为父元素宽度一半*/
+		}
+		.container{
+			width: 60px;
+			height: 60px;
+			background: pink;
+		}
+		  #container {   width: 50%;   
+                  position: relative;   
+                  background-color: red;   
+                  overflow: hidden;  
+                  /*//需要触发BFC消除margin折叠的问题*/ 
+              } 
+  .placeholder:after {   content: '';   
+                         display: block;   
+                         margin-top: 100%; 
+                         /*//margin 百分比相对父元素宽度计算*/ 
+                     } 
+                     .img{
+                     	width: 400px;
+                     	height: 300px;
+                     	position: relative;
+                     	background: blue;
+                     }
+                     img{
+                     	max-width: 100%;
+                     	max-height: 100%;
+                     	position: absolute;
+                     	left: 0;
+                     	top: 0;
+                     	right: 0;
+                     	bottom: 0;
+                     	margin: auto;
+                     }
+                     
+                     
+                     .embox {
+					width: 100px;
+					height: 300px;
+					border: 1px solid red;
+					font-size: 30px;
+					
+					}
+					
+					.em {
+					
+					font-size: 0.5em;
+					
+					}
+
+	</style>
+	
+</html>

@@ -8,6 +8,7 @@
 		<!-- {{item.name}} -->
 	<!-- </van-tab> -->
 <!-- </van-tabs> -->
+      <p>{{$t('login.title')}}</p>
 <div  class="tab">
 	<router-link v-for="item in data" :to="'/home/'+item.name" tag="label">{{item.name}}</router-link>
 </div>
@@ -43,10 +44,13 @@ export default {
 			console.log(name,title);
 			this.name=title
 			console.log(this)
-			
+
 		}
-	}
-	
+	},
+    created() {
+      console.log(this,"this")
+    }
+
 }
 </script>
 <style lang="less">
