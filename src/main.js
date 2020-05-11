@@ -112,9 +112,9 @@ console.log(666)
 console.log(555)
 console.log("jieshu")
 console.log('kaishi')
-<<<<<<< HEAD
+
 console.log("dev")
-=======
+
 console.log('pro')
->>>>>>> b3db31bf5d326969f6e7c4143e41a3c32bfdcd37
+
 
