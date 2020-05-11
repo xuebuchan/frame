@@ -10,7 +10,7 @@
 <!-- </van-tabs> -->
       <p>{{$t('login.title')}}</p>
 <div  class="tab">
-	<router-link v-for="item in data" :to="'/home/'+item.name" tag="label">{{item.name}}</router-link>
+	<router-link v-for="(item,index) in data" :to="'/home/'+item.name" tag="label" :key="index">{{item.name}}</router-link>
 </div>
 <keep-alive>
 	<router-view></router-view>

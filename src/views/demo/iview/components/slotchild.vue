@@ -7,16 +7,24 @@
         <slot name="down"></slot>
         // 匿名插槽
         <slot></slot>
+        <hr>
+        {{title}}
+        <hr>
     </div>
 </template>
 <script>
     export default {
         name: "child",
+        props:["title"],
         components: {},
         data() {
             return {}
         },
-        methods: {}
+        methods: {},
+        created() {
+            console.log(this.$slots.up)
+            console.log(this.$options)
+        }
     }
 </script>
 

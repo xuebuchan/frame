@@ -1,12 +1,13 @@
 const webpack = require('webpack')
+const path = require('path')
 module.exports = {
 	// baseUrl:'/frame/dist/',
 	baseUrl:'./',
-	configureWebpack: {
+	/*configureWebpack: {
 		plugins: [
 // 			new webpack.ProvidePlugin({
 // 				$:"jquery",
-// 	 
+//
 // 				jQuery:"jquery",
 // 				"windows.jQuery":"jquery"
 // 			})
@@ -17,7 +18,19 @@ module.exports = {
 //             'vuex': 'Vuex',
 //             'axios': 'axios',
 //           }
-	},
+	},*/
+    configureWebpack: {
+        resolve: {
+            alias: {
+                'assets': '@/assets',
+                'components': '@/components',
+                'libs': '@/libs',
+                'views': '@/views'
+            }
+        },
+        externals: {
+        }
+    },
 	 devServer: {
         proxy: {
             '/api': {
@@ -33,6 +46,19 @@ module.exports = {
       config
         .plugin('webpack-bundle-analyzer')
         .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
+        const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
+        types.forEach(type => addStyleResource(config.module.rule('less').oneOf(type)))  // A
+
     },
 
+}
+// 引入公共样式
+function addStyleResource (rule) {
+    rule.use('style-resource')
+        .loader('style-resources-loader')
+        .options({
+            patterns: [
+                path.resolve(__dirname, './src/assets/css/mixin.less'),  // B
+            ],
+        })
 }

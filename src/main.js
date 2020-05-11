@@ -24,8 +24,18 @@ const i18n = new VueI18n({
     }
 })
 
+import ViewUI from 'view-design';
+console.log(ViewUI,"ViewUI")
+import 'view-design/dist/styles/iview.css';
+Vue.use(ViewUI);
+import VueDND from 'awe-dnd'
+Vue.use(VueDND)
+// 富文本编辑器
+import VueTinymce from "@packy-tang/vue-tinymce"
 
-// Vue.use(VueI18n)
+//安装组件
+Vue.use(VueTinymce)
+
 router.beforeEach((to, from, next) => {
 	console.log("全局前置守卫");
 	next()
@@ -48,60 +58,8 @@ Vue.directive('focus', {
     el.focus()
   }
 })
-/*Vue.component('anchored-heading', {
-  render: function (createElement) {
-    return createElement(
-      'h' + this.level,   // 标签名称
-      this.$slots.default // 子节点数组
-    )
-  },
-  props: {
-    level: {
-      type: Number,
-      required: true
-    }
-  }
-})*/
 
-var getChildrenTextContent = function (children) {
-	console.log(children,"children")
-  return children.map(function (node) {
-  	console.log(node,"node")
-    return node.children
-      ? getChildrenTextContent(node.children)
-      : node.text
-  }).join('')
-}
 
-Vue.component('anchored-heading', {
-  render: function (createElement) {
-  	console.log(this,"this")
-  	console.log(this.$slots.default,"this.$slots.default")
-    // 创建 kebab-case 风格的 ID
-    var headingId = getChildrenTextContent(this.$slots.default)
-      .toLowerCase()
-      .replace(/\W+/g, '-')
-      .replace(/(^-|-$)/g, '')
-
-    return createElement(
-      'h' + this.level,
-      [
-        createElement('a', {
-          attrs: {
-            name: headingId,
-            href: '#' + headingId
-          }
-        }, this.$slots.default)
-      ]
-    )
-  },
-  props: {
-    level: {
-      type: Number,
-      required: true
-    }
-  }
-})
 //守卫
 router.beforeEach((to, from, next) => {
 	console.log("before")
@@ -113,6 +71,34 @@ router.afterEach((to, from) => {
 	// console.log(to,from);
 	// next()
 })
+let files = require.context('./views/demo/vue', true, /\w*\.vue$/)
+let slotchild=[]
+files.keys().forEach(key => {
+    console.log(files(key).default)
+    // slotchild.push(import(`../vue/${files(key).default}`))
+})
+Vue.component('render-fun', {
+    functional: true,
+    props: {
+        id: {
+            type: String,
+            required: true
+        }
+    },
+    data(){return {}},
+    render: function (createElement, context) {
+        console.log(context,"context");
+        console.log(context.props.id);
+        console.log(context.children)
+        return createElement("span",{
+            props: {
+                items:context.props.id,
+                to:context.props.id
+            },
+            }, context.children)
+    }
+})
+
 new Vue({
   router,
   store,
