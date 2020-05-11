@@ -106,3 +106,4 @@ new Vue({
   render: h => h(App)
 }).$mount('#app')
 console.log(i18n,"vue")
+console.log(123)
