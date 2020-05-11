@@ -108,3 +108,5 @@ new Vue({
 console.log(i18n,"vue")
 console.log(123)
 console.log("online")
+console.log("offline")
+
