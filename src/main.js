@@ -110,9 +110,6 @@ console.log(123)
 console.log("online")
 console.log(666)
 console.log(555)
-<<<<<<< HEAD
 console.log("jieshu")
-
-=======
 console.log('kaishi')
->>>>>>> b0a81a7ddc24e6ee80a166c80c16078eba33e37b
+
