@@ -121,3 +121,4 @@ new Vue({
 }).$mount('#app')
 console.log(i18n,"vue")
 console.log(this)
+console.log(456)
